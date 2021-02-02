@@ -1,0 +1,99 @@
+\hypertarget{class_caesar_cipher}{}\section{Caesar\+Cipher Class Reference}
+\label{class_caesar_cipher}\index{Caesar\+Cipher@{Caesar\+Cipher}}
+
+
+Encrypt or decrypt text using the Caesar cipher with the given key.  
+
+
+
+
+{\ttfamily \#include $<$M\+P\+A\+G\+S\+Cipher/\+Caesar\+Cipher.\+hpp$>$}
+
+Inheritance diagram for Caesar\+Cipher\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_caesar_cipher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_caesar_cipher_afd5bb88c0e74234e76ad96b12d902931}{Caesar\+Cipher} (const size\+\_\+t key)
+\item 
+\hyperlink{class_caesar_cipher_a041ad5a8ef2b9e064a72fe64c9a97f4f}{Caesar\+Cipher} (const std\+::string \&key)
+\item 
+virtual std\+::string \hyperlink{class_caesar_cipher_ad9c70da70e7c465189ab1750e97fae5d}{apply\+Cipher} (const std\+::string \&input\+Text, const \hyperlink{_cipher_mode_8hpp_ac3adaabf9bad553901589ddf3de6daf5}{Cipher\+Mode} cipher\+Mode) const override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+size\+\_\+t \hyperlink{class_caesar_cipher_a7c29ddf093a91b51c91d977dcf57e7c3}{key\+\_\+} = 0\hypertarget{class_caesar_cipher_a7c29ddf093a91b51c91d977dcf57e7c3}{}\label{class_caesar_cipher_a7c29ddf093a91b51c91d977dcf57e7c3}
+
+\begin{DoxyCompactList}\small\item\em The cipher key, essentially a constant shift to be applied. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encrypt or decrypt text using the Caesar cipher with the given key. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Caesar\+Cipher@{Caesar\+Cipher}!Caesar\+Cipher@{Caesar\+Cipher}}
+\index{Caesar\+Cipher@{Caesar\+Cipher}!Caesar\+Cipher@{Caesar\+Cipher}}
+\subsubsection[{\texorpdfstring{Caesar\+Cipher(const size\+\_\+t key)}{CaesarCipher(const size_t key)}}]{\setlength{\rightskip}{0pt plus 5cm}Caesar\+Cipher\+::\+Caesar\+Cipher (
+\begin{DoxyParamCaption}
+\item[{const size\+\_\+t}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_caesar_cipher_afd5bb88c0e74234e76ad96b12d902931}{}\label{class_caesar_cipher_afd5bb88c0e74234e76ad96b12d902931}
+Create a new \hyperlink{class_caesar_cipher}{Caesar\+Cipher} with the given key
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key to use in the cipher \\
+\hline
+\end{DoxyParams}
+\index{Caesar\+Cipher@{Caesar\+Cipher}!Caesar\+Cipher@{Caesar\+Cipher}}
+\index{Caesar\+Cipher@{Caesar\+Cipher}!Caesar\+Cipher@{Caesar\+Cipher}}
+\subsubsection[{\texorpdfstring{Caesar\+Cipher(const std\+::string \&key)}{CaesarCipher(const std::string &key)}}]{\setlength{\rightskip}{0pt plus 5cm}Caesar\+Cipher\+::\+Caesar\+Cipher (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_caesar_cipher_a041ad5a8ef2b9e064a72fe64c9a97f4f}{}\label{class_caesar_cipher_a041ad5a8ef2b9e064a72fe64c9a97f4f}
+Create a new \hyperlink{class_caesar_cipher}{Caesar\+Cipher}, converting the given string into the key
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the string to convert into the key to be used in the cipher \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Caesar\+Cipher@{Caesar\+Cipher}!apply\+Cipher@{apply\+Cipher}}
+\index{apply\+Cipher@{apply\+Cipher}!Caesar\+Cipher@{Caesar\+Cipher}}
+\subsubsection[{\texorpdfstring{apply\+Cipher(const std\+::string \&input\+Text, const Cipher\+Mode cipher\+Mode) const override}{applyCipher(const std::string &inputText, const CipherMode cipherMode) const override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Caesar\+Cipher\+::apply\+Cipher (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{input\+Text, }
+\item[{const {\bf Cipher\+Mode}}]{cipher\+Mode}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_caesar_cipher_ad9c70da70e7c465189ab1750e97fae5d}{}\label{class_caesar_cipher_ad9c70da70e7c465189ab1750e97fae5d}
+Apply the cipher to the provided text
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Text} & the text to encrypt or decrypt \\
+\hline
+{\em cipher\+Mode} & whether to encrypt or decrypt the input text \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of applying the cipher to the input text 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_cipher_ac6bbaa662c40483f3c0722109caf8572}{Cipher}.
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_caesar_cipher_8hpp}{Caesar\+Cipher.\+hpp}\item 
+Caesar\+Cipher.\+cpp\end{DoxyCompactItemize}

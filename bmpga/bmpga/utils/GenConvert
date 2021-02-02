@@ -1,0 +1,155 @@
+#!/usr/bin/python3
+"""
+
+GenConvert
+
+CLI utility to convert to/from the GEN fileformat described in the DFTB+ documentation (See: www.dftbplus.org)
+
+===================
+John Hey 12.04.2019
+===================
+"""
+
+
+def parse_gen(infile):
+    with open(infile, "r") as inf:
+
+        data = inf.readlines()
+
+
+    data = [l.lstrip().rstrip() for l in data] 
+    data = [l.split() for l in data]    
+
+    natoms = int(data[0][0])
+    coords = []
+    atom_names = data[1]
+    atom_types = []
+
+    
+    for line in data[2:]:
+        atom_types.append(line[1])
+        coords.append(line[2:])
+        
+    return {"names":atom_names, "types":atom_types, "coords":coords, "Natoms":str(natoms)}
+
+
+def parse_xyz(infile):
+    with open(infile, "r") as inf:
+
+        data = inf.readlines()
+
+    natoms = int(data[0])
+    data = [l.lstrip().rstrip() for l in data] 
+    data = [l.split() for l in data]    
+
+    coords = []
+    atom_names = []
+    atom_types = []
+    
+    for line in data[2:]:
+        atom_name = line[0]
+        
+        if atom_name not in atom_names:            
+            atom_names.append(atom_name)
+
+        atom_types.append(atom_names.index(atom_name))
+        
+        coords.append(line[1:])
+
+    return {"names": atom_names, "types": atom_types, "coords": coords, "Natoms": str(natoms)}
+
+
+def write_xyz(outfile, struct_dict):
+
+    with open(outfile, "w") as of:
+        of.write(struct_dict["Natoms"]+"\n")
+        of.write("Comment_line\n")
+
+        print(struct_dict)
+        for coord, atom_type in zip(struct_dict["coords"], struct_dict["types"]):
+            print(atom_type, type(atom_type))
+            of.write("   ".join([struct_dict["names"][int(atom_type)-1]]+coord)+"\n")
+
+
+def write_gen(outfile, struct_dict):
+
+    with open(outfile, "w") as of:
+        of.write(struct_dict["Natoms"]+" C \n")
+        of.write(" ".join(struct_dict["names"])+"\n")
+
+        for idx, (atom_type, coord) in enumerate(zip(struct_dict["types"], struct_dict["coords"])):
+            of.write("   ".join([str(idx)]+[str(atom_type+1)]+coord)+"\n")
+
+
+def parse_args():
+    
+
+    supported_file_types = ["gen", "xyz"]
+    
+    parser = argparse.ArgumentParser(description='GenConvert: Utility to convert xyz <--> gen format files')
+    
+    parser.add_argument('-i', type=str, default=None,
+                        help='Input file name to be converted.\nCurrently only supports:\n{}'.format(supported_file_types))
+
+    parser.add_argument("-o", type=str, default=None,help="Output file to be generated.\nCurrently only supports:\n{}".format(supported_file_types))
+
+    args = parser.parse_args()
+
+    inparser, writer = None, None
+
+    if args.i.endswith(".xyz"):
+        inparser = parse_xyz
+    elif args.i.endswith(".gen"):
+        inparser = parse_gen
+    else:
+        print("Input file type not recognised\nQuitting")
+        exit()
+        
+    if args.o.endswith(".xyz"):
+        writer = write_xyz
+    elif args.o.endswith(".gen"):
+        writer = write_gen
+    elif args.o is None:
+        print("No output file supplied.\nQuitting")
+        exit()
+    else:
+        print("Output file type not recognised\nQuitting")        
+        exit()
+        
+    return inparser, writer, args
+
+
+def main():
+
+    parser, writer, args = parse_args()
+
+    infile = args.i
+    outfile = args.o
+    
+    if os.path.exists(infile):
+        print("Parsing {} to create {}".format(infile, outfile))
+        coords_dict = parser(infile)
+        writer(outfile, coords_dict)
+
+    else:
+        print("The input file must exist!\nQuitting")
+        exit()
+
+    
+if __name__ == "__main__":
+
+    import argparse    
+    import os
+    
+    main()
+
+    exit()
+    
+    test_dict = parse_xyz(infile)
+    print(test_dict)
+    write_xyz(outfile+".xyz", test_dict)
+
+    
+    write_gen(outfile+".gen", test_dict)
+
+    parse_gen(outfile+".gen")

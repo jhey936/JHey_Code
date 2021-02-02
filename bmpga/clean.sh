@@ -1,0 +1,2 @@
+rm bmpga/*/*.log
+

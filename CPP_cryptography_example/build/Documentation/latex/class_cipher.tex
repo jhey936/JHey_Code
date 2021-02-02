@@ -1,0 +1,83 @@
+\hypertarget{class_cipher}{}\section{Cipher Class Reference}
+\label{class_cipher}\index{Cipher@{Cipher}}
+
+
+Defines the interface for a cipher.  
+
+
+
+
+{\ttfamily \#include $<$M\+P\+A\+G\+S\+Cipher/\+Cipher.\+hpp$>$}
+
+Inheritance diagram for Cipher\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_cipher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual std\+::string \hyperlink{class_cipher_ac6bbaa662c40483f3c0722109caf8572}{apply\+Cipher} (const std\+::string \&input\+Text, const \hyperlink{_cipher_mode_8hpp_ac3adaabf9bad553901589ddf3de6daf5}{Cipher\+Mode} cipher\+Mode) const =0
+\item 
+\hyperlink{class_cipher_a0f61b1dd7eb5a62d182cc7266600ff08}{Cipher} ()=default\hypertarget{class_cipher_a0f61b1dd7eb5a62d182cc7266600ff08}{}\label{class_cipher_a0f61b1dd7eb5a62d182cc7266600ff08}
+
+\begin{DoxyCompactList}\small\item\em Default constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_cipher_a62a7b56af4d11ab44cbdb701adf6b3ea}{Cipher} (const \hyperlink{class_cipher}{Cipher} \&rhs)=default\hypertarget{class_cipher_a62a7b56af4d11ab44cbdb701adf6b3ea}{}\label{class_cipher_a62a7b56af4d11ab44cbdb701adf6b3ea}
+
+\begin{DoxyCompactList}\small\item\em Default copy constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_cipher_a4ec5184e4bada371aebcca06cb3725ff}{Cipher} (\hyperlink{class_cipher}{Cipher} \&\&rhs)=default\hypertarget{class_cipher_a4ec5184e4bada371aebcca06cb3725ff}{}\label{class_cipher_a4ec5184e4bada371aebcca06cb3725ff}
+
+\begin{DoxyCompactList}\small\item\em Default move constructor. \end{DoxyCompactList}\item 
+\hyperlink{class_cipher}{Cipher} \& \hyperlink{class_cipher_ada389c6da626cade301d7b0ef5a5a22b}{operator=} (const \hyperlink{class_cipher}{Cipher} \&rhs)=default\hypertarget{class_cipher_ada389c6da626cade301d7b0ef5a5a22b}{}\label{class_cipher_ada389c6da626cade301d7b0ef5a5a22b}
+
+\begin{DoxyCompactList}\small\item\em Default copy assignment operator. \end{DoxyCompactList}\item 
+\hyperlink{class_cipher}{Cipher} \& \hyperlink{class_cipher_af0def19925ad32238ca0d7a74a90f115}{operator=} (\hyperlink{class_cipher}{Cipher} \&\&rhs)=default\hypertarget{class_cipher_af0def19925ad32238ca0d7a74a90f115}{}\label{class_cipher_af0def19925ad32238ca0d7a74a90f115}
+
+\begin{DoxyCompactList}\small\item\em Default move assignment operator. \end{DoxyCompactList}\item 
+virtual \hyperlink{class_cipher_af150a3783e81d40ded595b4c9e751b95}{$\sim$\+Cipher} ()=default\hypertarget{class_cipher_af150a3783e81d40ded595b4c9e751b95}{}\label{class_cipher_af150a3783e81d40ded595b4c9e751b95}
+
+\begin{DoxyCompactList}\small\item\em Make the default destructor virtual. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Defines the interface for a cipher. 
+
+A purely abstract base class that defines the interface for a cipher
+
+It can be used as follows\+: 
+\begin{DoxyCode}
+\textcolor{keyword}{class }MyCipher : \textcolor{keyword}{public} \hyperlink{class_cipher}{Cipher} \{...\};
+\end{DoxyCode}
+ 
+
+\subsection{Member Function Documentation}
+\index{Cipher@{Cipher}!apply\+Cipher@{apply\+Cipher}}
+\index{apply\+Cipher@{apply\+Cipher}!Cipher@{Cipher}}
+\subsubsection[{\texorpdfstring{apply\+Cipher(const std\+::string \&input\+Text, const Cipher\+Mode cipher\+Mode) const =0}{applyCipher(const std::string &inputText, const CipherMode cipherMode) const =0}}]{\setlength{\rightskip}{0pt plus 5cm}virtual std\+::string Cipher\+::apply\+Cipher (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{input\+Text, }
+\item[{const {\bf Cipher\+Mode}}]{cipher\+Mode}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [pure virtual]}}\hypertarget{class_cipher_ac6bbaa662c40483f3c0722109caf8572}{}\label{class_cipher_ac6bbaa662c40483f3c0722109caf8572}
+Apply the cipher to the provided text
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Text} & the text to encrypt or decrypt \\
+\hline
+{\em cipher\+Mode} & whether to encrypt or decrypt the input text \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of applying the cipher to the input text 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{class_vigenere_cipher_ad302e0a368a7f61368f0cfa894bdb792}{Vigenere\+Cipher}, \hyperlink{class_caesar_cipher_ad9c70da70e7c465189ab1750e97fae5d}{Caesar\+Cipher}, and \hyperlink{class_playfair_cipher_ac5e23f02becb84cb26d89dadeed87b05}{Playfair\+Cipher}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_cipher_8hpp}{Cipher.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,152 @@
+A simple command line tool for encrypting/decrypting text using classical ciphers
+
+\section*{Building {\ttfamily mpags-\/cipher}}
+
+Compilation of {\ttfamily mpags-\/cipher} requires the \href{http://www.cmake.org}{\tt C\+Make} build tool, plus a C++11 compatible compiler (G\+CC 4.\+8 or better, Clang 3.\+4 or better are recommended) and {\ttfamily make} on a U\+N\+IX operating system. Windows platforms with Visual Studio 2015 or better are also expected to work, but not tested.
+
+To build from a clone of this repository, open a terminal window and change directory into that holding this R\+E\+A\+D\+ME. Create a build directory in which to run {\ttfamily cmake} and the build, and change into it\+:
+
+
+\begin{DoxyCode}
+1 $ ls
+2 CMakeLists.txt   LICENSE          MPAGSCipher      README.md        mpags-cipher.cpp
+3 $ mkdir ../Build
+4 $ cd ../Build
+\end{DoxyCode}
+
+
+Run {\ttfamily cmake} in this directory, pointing it to the directory holding this R\+E\+A\+D\+ME, and consequently the top level C\+Make script for the project\+:
+
+
+\begin{DoxyCode}
+1 $ cmake ../<this dir>
+2 ... system specific output ...
+3 -- Configuring done
+4 -- Generating done
+5 -- Build files have been written to: ... your build dir path ...
+6 $
+\end{DoxyCode}
+
+
+The exact output will depend on your system, compiler and build directory location, but you should not see any errors. C\+Make will generate Makefiles by default on U\+N\+IX platforms, so to build, simply run {\ttfamily make} in the build directory\+:
+
+
+\begin{DoxyCode}
+1 $ ls
+2 CMakeCache.txt      CMakeFiles          Makefile            cmake\_install.cmake
+3 $ make
+4 ... verbose output ...
+5 [100%] Built target mpags-cipher
+6 ...
+7 $
+\end{DoxyCode}
+
+
+Again, the exact output will be system specific, but you should see the {\ttfamily mpags-\/cipher} target built without error. The resulting {\ttfamily mpags-\/cipher} executable can then be run directly, and provides the following command line options\+:
+
+
+\begin{DoxyCode}
+1 $ ./mpags-cipher --help
+2 Usage: mpags-cipher [-i/--infile <file>] [-o/--outfile <file>] [-c/--cipher <cipher>] [-k/--key <key>]
+       [--encrypt/--decrypt]
+3 
+4 Encrypts/Decrypts input alphanumeric text using classical ciphers
+5 
+6 Available options:
+7 
+8   -h|--help
+9                       Print this help message and exit
+10 
+11   -v|--version
+12                       Print version information
+13 
+14   -i|--infile FILE
+15                       Read text to be processed from FILE
+16                       Stdin will be used if not supplied
+17 
+18   -o|--outfile FILE
+19                       Write processed text to FILE
+20                       Stdout will be used if not supplied
+21 
+22   -c|--cipher CIPHER
+23                       Specify the cipher to be used to perform the encryption/decryption
+24                       CIPHER can be caesar, playfair or vigenere - caesar is the default
+25 
+26   -k|--key KEY
+27                       Specify the cipher KEY
+28                       A null key, i.e. no encryption, is used if not supplied
+29 
+30   --encrypt
+31                       Will use the cipher to encrypt the input text (default behaviour)
+32 
+33   --decrypt
+34                       Will use the cipher to decrypt the input text
+\end{DoxyCode}
+
+
+If no input file is supplied, {\ttfamily mpags-\/cipher} will wait for user input from the keyboard until R\+E\+T\+U\+RN followed by C\+T\+R\+L-\/D are pressed. It will then echo the input to stdout or write it to the file supplied with the {\ttfamily -\/o} option.
+
+To ensure the input text can be used with the character sets known to classical ciphers, it is transliterated using the following rules\+:
+
+
+\begin{DoxyItemize}
+\item Alphabetical characters are converted to uppercase
+\item Digits are translated to their English equivalent words (e.\+g. \textquotesingle{}0\textquotesingle{} -\/$>$ \char`\"{}\+Z\+E\+R\+O\char`\"{})
+\item All other characters (punctuation) are discarded
+\end{DoxyItemize}
+
+At present, the Caesar, Playfair and Vigenere ciphers are supported.
+
+\section*{Testing}
+
+After building the M\+P\+A\+G\+S\+Cipher library it can be tested by running {\ttfamily ctest -\/\+VV} from the build directory.
+
+\section*{Source Code Layout}
+
+Under this directory, the code and associated files are organised as follows\+:
+
+
+\begin{DoxyCode}
+1 MPAGS-Code
+2 ├── README.md             This file, describes the project
+3 ├── LICENSE               License file, in our case MIT
+4 ├── CMakeLists.txt        CMake build script
+5 ├── mpags-cipher.cpp      Main program C++ source file
+6 ├── Documentation         Subdirectory for documentation of the MPAGSCipher library
+7 │   ├── CMakeLists.txt
+8 │   └── Doxyfile.in
+9 ├── MPAGSCipher           Subdirectory for MPAGSCipher library code
+10 │   ├── CMakeLists.txt
+11 │   ├── Alphabet.hpp
+12 │   ├── CaesarCipher.cpp
+13 │   ├── CaesarCipher.hpp
+14 │   ├── Cipher.hpp
+15 │   ├── CipherFactory.cpp
+16 │   ├── CipherFactory.hpp
+17 │   ├── CipherMode.hpp
+18 │   ├── CipherType.hpp
+19 │   ├── PlayfairCipher.cpp
+20 │   ├── PlayfairCipher.hpp
+21 │   ├── ProcessCommandLine.cpp
+22 │   ├── ProcessCommandLine.hpp
+23 │   ├── TransformChar.cpp
+24 │   ├── TransformChar.hpp
+25 │   ├── VigenereCipher.cpp
+26 │   └── VigenereCipher.hpp
+27 ├── Testing               Subdirectory for testing the MPAGSCipher library
+28 │   ├── CMakeLists.txt
+29 │   ├── catch.hpp
+30 │   ├── testCaesarCipher.cpp
+31 │   ├── testCatch.cpp
+32 │   ├── testCiphers.cpp
+33 │   ├── testHello.cpp
+34 │   ├── testPlayfairCipher.cpp
+35 │   ├── testProcessCommandLine.cpp
+36 │   ├── testTransformChar.cpp
+37 │   └── testVigenereCipher.cpp
+\end{DoxyCode}
+
+
+\section*{Copying}
+
+{\ttfamily mpags-\/cipher} is licensed under the terms of the M\+IT License. Please see the file \mbox{[}{\ttfamily L\+I\+C\+E\+N\+SE}\mbox{]}(L\+I\+C\+E\+N\+SE) for full details. 

@@ -1,0 +1,9 @@
+
+
+rm example.uri info.log error.log -f
+
+python spawn_server.py &
+sleep 1
+python spawn_clients.py &
+
+rm example.uri info.log error.log -f

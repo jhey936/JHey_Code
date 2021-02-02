@@ -1,0 +1,51 @@
+\hypertarget{_process_command_line_8hpp}{}\section{Process\+Command\+Line.\+hpp File Reference}
+\label{_process_command_line_8hpp}\index{Process\+Command\+Line.\+hpp@{Process\+Command\+Line.\+hpp}}
+
+
+Contains the declarations of the data structures and functions associated with the processing of command-\/line arguments.  
+
+
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+{\ttfamily \#include \char`\"{}Cipher\+Mode.\+hpp\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}Cipher\+Type.\+hpp\char`\"{}}\\*
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{struct_program_settings}{Program\+Settings}
+\begin{DoxyCompactList}\small\item\em Holds the settings of the program that can be modified by command-\/line arguments. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{_process_command_line_8hpp_af7f2f0960ef5ac4941e8fcb10138d772}{process\+Command\+Line} (const std\+::vector$<$ std\+::string $>$ \&args, \hyperlink{struct_program_settings}{Program\+Settings} \&settings)
+\begin{DoxyCompactList}\small\item\em Processes the command-\/line arguments and modifies accordingly the program settings. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Contains the declarations of the data structures and functions associated with the processing of command-\/line arguments. 
+
+
+
+\subsection{Function Documentation}
+\index{Process\+Command\+Line.\+hpp@{Process\+Command\+Line.\+hpp}!process\+Command\+Line@{process\+Command\+Line}}
+\index{process\+Command\+Line@{process\+Command\+Line}!Process\+Command\+Line.\+hpp@{Process\+Command\+Line.\+hpp}}
+\subsubsection[{\texorpdfstring{process\+Command\+Line(const std\+::vector$<$ std\+::string $>$ \&args, Program\+Settings \&settings)}{processCommandLine(const std::vector< std::string > &args, ProgramSettings &settings)}}]{\setlength{\rightskip}{0pt plus 5cm}void process\+Command\+Line (
+\begin{DoxyParamCaption}
+\item[{const std\+::vector$<$ std\+::string $>$ \&}]{args, }
+\item[{{\bf Program\+Settings} \&}]{settings}
+\end{DoxyParamCaption}
+)}\hypertarget{_process_command_line_8hpp_af7f2f0960ef5ac4941e8fcb10138d772}{}\label{_process_command_line_8hpp_af7f2f0960ef5ac4941e8fcb10138d772}
+
+
+Processes the command-\/line arguments and modifies accordingly the program settings. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em args} & the command-\/line arguments to be processed \\
+\hline
+{\em settings} & the program settings to be modified based upon the arguments received \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if the arguments could be successfully parsed, false otherwise 
+\end{DoxyReturn}

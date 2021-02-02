@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -Werror -Wfatal-errors -Wshadow -pedantic   CMakeFiles/testCatch.dir/testCatch.cpp.o  -o testCatch -rdynamic 

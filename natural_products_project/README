@@ -1,0 +1,12 @@
+
+
+
+Install requirements with:
+
+$ pip install numpy scipy networkx requests bs4
+
+Run with:
+
+$ python3 parse_natural_products.py <directory with mol_files>
+
+There are some jupyter-notebooks in natural_products_project/analysis for the analysis of the databases

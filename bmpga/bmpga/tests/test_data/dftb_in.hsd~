@@ -1,0 +1,57 @@
+Geometry = GenFormat {
+  <<< "genfile.gen"
+}
+
+Driver = gDIIS { # 12s 210 steps
+#Driver = LBFGS { # 14.1s 199 steps
+  MovedAtoms = O H C
+  MaxForceComponent = 1E-4
+  MaxSteps = 10000
+  OutputPrefix = "geom.out"
+}
+
+Hamiltonian = DFTB {	    
+	    SCC = Yes
+
+	    SlaterKosterFiles {
+	    		      H-H = "/home/john/Software/dftbplus-18.2.x86_64-linux/3ob-3-1/H-H.skf"
+			      H-O = "/home/john/Software/dftbplus-18.2.x86_64-linux/3ob-3-1/H-O.skf"
+			      O-H = "/home/john/Software/dftbplus-18.2.x86_64-linux/3ob-3-1/H-O.skf"
+			      O-O = "/home/john/Software/dftbplus-18.2.x86_64-linux/3ob-3-1/O-O.skf"
+			      C-O = "/home/john/Software/dftbplus-18.2.x86_64-linux/3ob-3-1/C-O.skf"
+			      O-C = "/home/john/Software/dftbplus-18.2.x86_64-linux/3ob-3-1/C-O.skf"
+			      C-H = "/home/john/Software/dftbplus-18.2.x86_64-linux/3ob-3-1/H-C.skf"
+			      H-C = "/home/john/Software/dftbplus-18.2.x86_64-linux/3ob-3-1/H-C.skf"
+			      C-C = "/home/john/Software/dftbplus-18.2.x86_64-linux/3ob-3-1/C-C.skf"
+			      
+	    }
+	    
+	    MaxAngularMomentum {
+	    		       C = "p"
+	    		       O = "p"
+			       H = "s"
+			       }
+
+	    Filling = Fermi {
+	    	      	    Temperature [Kelvin] = 0.0
+			    }
+	    
+	    
+	    DampXH = Yes	    
+	    DampXHExponent = 4.00
+}
+
+Options {}
+
+Analysis = {
+  CalculateForces = Yes
+  }
+
+ParserOptions {
+  ParserVersion = 5
+  }
+
+Parallel {
+	 groups = 2
+}
+

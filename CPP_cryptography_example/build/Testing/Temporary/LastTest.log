@@ -1,0 +1,137 @@
+Start testing: May 10 16:07 BST
+----------------------------------------------------------
+1/8 Testing: test-hello
+1/8 Test: test-hello
+Command: "/home/john/Software/cpp_course/6_week6/build/Testing/testHello"
+Directory: /home/john/Software/cpp_course/6_week6/build/Testing
+"test-hello" start time: May 10 16:07 BST
+Output:
+----------------------------------------------------------
+Hello World!
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-hello" end time: May 10 16:07 BST
+"test-hello" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/8 Testing: test-catch
+2/8 Test: test-catch
+Command: "/home/john/Software/cpp_course/6_week6/build/Testing/testCatch"
+Directory: /home/john/Software/cpp_course/6_week6/build/Testing
+"test-catch" start time: May 10 16:07 BST
+Output:
+----------------------------------------------------------
+===============================================================================
+All tests passed (2 assertions in 2 test cases)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-catch" end time: May 10 16:07 BST
+"test-catch" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/john/Software/cpp_course/6_week6/build/Testing/testTransformChar
+3/8 Testing: test-transformchar
+3/8 Test: test-transformchar
+Command: ""
+Directory: /home/john/Software/cpp_course/6_week6/build/Testing
+"test-transformchar" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-transformchar" end time: May 10 16:07 BST
+"test-transformchar" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/8 Testing: test-processcommandline
+4/8 Test: test-processcommandline
+Command: "/home/john/Software/cpp_course/6_week6/build/Testing/testProcessCommandLine"
+Directory: /home/john/Software/cpp_course/6_week6/build/Testing
+"test-processcommandline" start time: May 10 16:07 BST
+Output:
+----------------------------------------------------------
+===============================================================================
+All tests passed (14 assertions in 14 test cases)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-processcommandline" end time: May 10 16:07 BST
+"test-processcommandline" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/john/Software/cpp_course/6_week6/build/Testing/testCaesarCipher
+5/8 Testing: test-caesarcipher
+5/8 Test: test-caesarcipher
+Command: ""
+Directory: /home/john/Software/cpp_course/6_week6/build/Testing
+"test-caesarcipher" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-caesarcipher" end time: May 10 16:07 BST
+"test-caesarcipher" time elapsed: 00:00:00
+----------------------------------------------------------
+
+6/8 Testing: test-playfaircipher
+6/8 Test: test-playfaircipher
+Command: "/home/john/Software/cpp_course/6_week6/build/Testing/testPlayfairCipher"
+Directory: /home/john/Software/cpp_course/6_week6/build/Testing
+"test-playfaircipher" start time: May 10 16:07 BST
+Output:
+----------------------------------------------------------
+===============================================================================
+All tests passed (2 assertions in 2 test cases)
+
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-playfaircipher" end time: May 10 16:07 BST
+"test-playfaircipher" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/john/Software/cpp_course/6_week6/build/Testing/testVigenereCipher
+7/8 Testing: test-vigenerecipher
+7/8 Test: test-vigenerecipher
+Command: ""
+Directory: /home/john/Software/cpp_course/6_week6/build/Testing
+"test-vigenerecipher" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-vigenerecipher" end time: May 10 16:07 BST
+"test-vigenerecipher" time elapsed: 00:00:00
+----------------------------------------------------------
+
+Unable to find executable: /home/john/Software/cpp_course/6_week6/build/Testing/testCiphers
+8/8 Testing: test-ciphers
+8/8 Test: test-ciphers
+Command: ""
+Directory: /home/john/Software/cpp_course/6_week6/build/Testing
+"test-ciphers" start time: 
+Output:
+----------------------------------------------------------
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"test-ciphers" end time: May 10 16:07 BST
+"test-ciphers" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: May 10 16:07 BST

@@ -1,0 +1,13 @@
+test-hello 1 0.00205612
+test-catch 1 0.00232196
+test-transformchar 0 0
+test-processcommandline 1 0.00241804
+test-caesarcipher 0 0
+test-playfaircipher 1 0.00223589
+test-vigenerecipher 0 0
+test-ciphers 0 0
+---
+test-transformchar
+test-caesarcipher
+test-vigenerecipher
+test-ciphers

@@ -1,0 +1,3 @@
+echo -n "Total number of lines of python = "
+find . -name "*.py" -type f -exec grep . {} # \; | wc -l
+

@@ -1,0 +1,102 @@
+\hypertarget{class_vigenere_cipher}{}\section{Vigenere\+Cipher Class Reference}
+\label{class_vigenere_cipher}\index{Vigenere\+Cipher@{Vigenere\+Cipher}}
+
+
+Encrypt or decrypt text using the Vigenere cipher with the given key.  
+
+
+
+
+{\ttfamily \#include $<$M\+P\+A\+G\+S\+Cipher/\+Vigenere\+Cipher.\+hpp$>$}
+
+Inheritance diagram for Vigenere\+Cipher\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_vigenere_cipher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_vigenere_cipher_ae4366bd9c507300040c276aff2b4088d}{Vigenere\+Cipher} (const std\+::string \&key)
+\item 
+void \hyperlink{class_vigenere_cipher_aed849482cc1402979c20d4087e6ca807}{set\+Key} (const std\+::string \&key)
+\item 
+virtual std\+::string \hyperlink{class_vigenere_cipher_ad302e0a368a7f61368f0cfa894bdb792}{apply\+Cipher} (const std\+::string \&input\+Text, const \hyperlink{_cipher_mode_8hpp_ac3adaabf9bad553901589ddf3de6daf5}{Cipher\+Mode} cipher\+Mode) const override
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::string \hyperlink{class_vigenere_cipher_a834c19db11d2c93b25746b5a47b84342}{key\+\_\+} = \char`\"{}\char`\"{}\hypertarget{class_vigenere_cipher_a834c19db11d2c93b25746b5a47b84342}{}\label{class_vigenere_cipher_a834c19db11d2c93b25746b5a47b84342}
+
+\begin{DoxyCompactList}\small\item\em The cipher key. \end{DoxyCompactList}\item 
+std\+::map$<$ char, \hyperlink{class_caesar_cipher}{Caesar\+Cipher} $>$ \hyperlink{class_vigenere_cipher_ae710244c3caee93b8738e56aec26dcb9}{char\+Lookup\+\_\+}\hypertarget{class_vigenere_cipher_ae710244c3caee93b8738e56aec26dcb9}{}\label{class_vigenere_cipher_ae710244c3caee93b8738e56aec26dcb9}
+
+\begin{DoxyCompactList}\small\item\em Lookup table to go from the character to the corresponding Caesar cipher. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encrypt or decrypt text using the Vigenere cipher with the given key. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Vigenere\+Cipher@{Vigenere\+Cipher}!Vigenere\+Cipher@{Vigenere\+Cipher}}
+\index{Vigenere\+Cipher@{Vigenere\+Cipher}!Vigenere\+Cipher@{Vigenere\+Cipher}}
+\subsubsection[{\texorpdfstring{Vigenere\+Cipher(const std\+::string \&key)}{VigenereCipher(const std::string &key)}}]{\setlength{\rightskip}{0pt plus 5cm}Vigenere\+Cipher\+::\+Vigenere\+Cipher (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_vigenere_cipher_ae4366bd9c507300040c276aff2b4088d}{}\label{class_vigenere_cipher_ae4366bd9c507300040c276aff2b4088d}
+Create a new \hyperlink{class_vigenere_cipher}{Vigenere\+Cipher} with the given key
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key to use in the cipher \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Vigenere\+Cipher@{Vigenere\+Cipher}!apply\+Cipher@{apply\+Cipher}}
+\index{apply\+Cipher@{apply\+Cipher}!Vigenere\+Cipher@{Vigenere\+Cipher}}
+\subsubsection[{\texorpdfstring{apply\+Cipher(const std\+::string \&input\+Text, const Cipher\+Mode cipher\+Mode) const override}{applyCipher(const std::string &inputText, const CipherMode cipherMode) const override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Vigenere\+Cipher\+::apply\+Cipher (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{input\+Text, }
+\item[{const {\bf Cipher\+Mode}}]{cipher\+Mode}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_vigenere_cipher_ad302e0a368a7f61368f0cfa894bdb792}{}\label{class_vigenere_cipher_ad302e0a368a7f61368f0cfa894bdb792}
+Apply the cipher to the provided text
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Text} & the text to encrypt or decrypt \\
+\hline
+{\em cipher\+Mode} & whether to encrypt or decrypt the input text \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of applying the cipher to the input text 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_cipher_ac6bbaa662c40483f3c0722109caf8572}{Cipher}.
+
+\index{Vigenere\+Cipher@{Vigenere\+Cipher}!set\+Key@{set\+Key}}
+\index{set\+Key@{set\+Key}!Vigenere\+Cipher@{Vigenere\+Cipher}}
+\subsubsection[{\texorpdfstring{set\+Key(const std\+::string \&key)}{setKey(const std::string &key)}}]{\setlength{\rightskip}{0pt plus 5cm}void Vigenere\+Cipher\+::set\+Key (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{class_vigenere_cipher_aed849482cc1402979c20d4087e6ca807}{}\label{class_vigenere_cipher_aed849482cc1402979c20d4087e6ca807}
+Set the key to be used for the encryption/decryption
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key to use in the cipher \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_vigenere_cipher_8hpp}{Vigenere\+Cipher.\+hpp}\item 
+Vigenere\+Cipher.\+cpp\end{DoxyCompactItemize}

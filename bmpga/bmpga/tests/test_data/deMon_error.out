@@ -1,0 +1,85 @@
+************************************************
+***                                          ***
+***     PROGRAM deMon-Nano Experiment 2009   ***
+***                                          ***
+*** Version September 1st 2009,              ***
+*** a poorly documented beta version         ***
+***                                          ***
+*** Copyrights (C)                           ***
+*** DFT    : CINVESTAV Mexico, Mexico        ***
+*** QMMM,MM: The National Research Council   ***
+***          (NRC) Ottawa, Canada            ***
+*** DFTB,MD: Jacobs University Bremen        ***
+*** OPT    : University of Toulouse          ***
+*** QMMM, MM, DFTB, MD, OPT parts are        ***
+*** published under the GNU public license   ***
+*** Version 2.0.                             ***
+***                                          ***
+*** AUTHORS: Thomas Heine, Mathias Rapacioli,***
+*** Serguei Patchkovskii, Johannes Frenzel,  ***
+*** Andreas M. Koester, P. Calaminici,       ***
+*** S. Escalante, Helio A. Duarte,           ***
+*** Roberto Flores, Gerald Geudtner,         ***
+*** Annick Goursot, J. Ulises Reveles,       ***
+*** Alberto Vela, Dennis R. Salahub          ***
+***                                          ***
+************************************************
+
+ FIRST TIMING           DATE: TUE JUN 18 12:13:28 2019  TOTAL TIME:       0.000
+
+ FIRST TIMING           DATE: TUE JUN 18 12:13:28 2019  REAL  TIME:       0.000
+
+ INITIALIZATION                   STEP TIME:     0.056  TOTAL TIME:       0.056  REAL TIME:     0.056
+ 
+ 
+ **************************
+ *** ERROR IN QMMMALLOC ***
+ **************************
+ 
+ *** ERROR 153 DEALLOCATING 0 BYTES OF MEMORY AT QM/MM FINALIZE STAGE ***
+ 
+ 
+ 
+ *************************************************
+ *************************************************
+ *** ABNORMAL PROGRAM TERMINATION IN QMMMALLOC ***
+ *************************************************
+ *************************************************
+ 
+ 
+ TRACEBACK STACK: 
+
+         --------
+         READIN
+         DEMON
+         --------
+
+
+THE FOLLOWING ARRAYS ARE CURRENTLY ALLOCATED:
+
+    SIZE (WORDS)     SCOPE               NAME
+    ------------     -----               -----
+               0   * QMMMALLOC           TMP_MM_SUBSYSTEM
+               0   * QMMMALLOC           TMP_QMMM_BAS_NAME
+               0   * QMMMALLOC           TMP_MM_ATOMNO
+               0   * QMMMALLOC           TMP_MM_BO
+               0   * QMMMALLOC           TMP_QMMM_ATOM_TYPE
+               0   * QMMMALLOC           TMP_MM_CHARGE
+               0   * QMMMALLOC           TMP_QMMM_CAP_NAME
+               0   * QMMMALLOC           TMP_MM_ATOM_TYPE
+               0   * QMMMALLOC           TMP_MM_BONDS
+
+                   * INDICATES POSSIBLE MEMORY LEAKS
+
+ 
+ TIMING STATISTICS (SECONDS)
+ 
+ THE TIMER < INPUT > IS STILL ACTIVE. TIMER STATUS: STARTED
+ TIMER ENTRY                   No. OF CALLS       TOTAL CPU TIME   THREAD EFFICIENCY     REAL TIME
+                                                  [sec]      [%]       [sec]    [%]      [sec]     [%]
+ INITIALIZATION                           1         0.1     73.6         0.1  100.0         0.1   70.7
+ INPUT                                    1         0.0      0.0         0.0    0.0         0.0    0.0
+
+ FINAL TIMING           DATE: TUE JUN 18 12:13:28 2019  TOTAL TIME:       0.076
+
+ FINAL TIMING           DATE: TUE JUN 18 12:13:28 2019  REAL  TIME:       0.079

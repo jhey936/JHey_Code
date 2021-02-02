@@ -1,0 +1,40 @@
+import logging
+import Pyro4
+
+import numpy as np
+
+from bmpga.mating.selectors import BaseSelector
+from bmpga.characterization import SimpleCharacterizer
+from bmpga.storage import Database, Cluster, Molecule
+from bmpga.systems import DefineSystem
+from bmpga.optimisation import PoolGA
+
+log = logging.getLogger(__name__)
+
+compare = SimpleCharacterizer()
+database = Database(db="test.db",
+                    new_database=True,
+                    compare_clusters=SimpleCharacterizer(accuracy=5e-7))
+
+
+lj = Molecule(coordinates=np.array([[0.0, 0.0, 0.0]]), particle_names=["LJ"])
+system = DefineSystem(numbers_of_molecules=[13], molecules=[lj], log=log, box_length=6)
+
+
+daemon = Pyro4.Daemon(port=9939)
+
+GA = PoolGA(database=database,
+            min_pool_size=10,
+            max_generations=2,
+            system=system,
+            daemon=daemon,
+            log=log)
+
+with open("example.uri", "w") as f:
+    uri = daemon.register(GA)
+    f.write(str(uri))
+
+GA.start_threads()
+daemon.requestLoop()
+daemon.shutdown()
+            

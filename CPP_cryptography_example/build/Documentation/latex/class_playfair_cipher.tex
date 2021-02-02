@@ -1,0 +1,117 @@
+\hypertarget{class_playfair_cipher}{}\section{Playfair\+Cipher Class Reference}
+\label{class_playfair_cipher}\index{Playfair\+Cipher@{Playfair\+Cipher}}
+
+
+Encrypt or decrypt text using the Playfair cipher with the given key.  
+
+
+
+
+{\ttfamily \#include $<$M\+P\+A\+G\+S\+Cipher/\+Playfair\+Cipher.\+hpp$>$}
+
+Inheritance diagram for Playfair\+Cipher\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{class_playfair_cipher}
+\end{center}
+\end{figure}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{class_playfair_cipher_abb71ab96f33cdcb0651c23f03952aef4}{Playfair\+Cipher} (const std\+::string \&key)
+\item 
+void \hyperlink{class_playfair_cipher_ab4a3d263f9101cb7aa50d4ad39c15737}{set\+Key} (const std\+::string \&key)
+\item 
+virtual std\+::string \hyperlink{class_playfair_cipher_ac5e23f02becb84cb26d89dadeed87b05}{apply\+Cipher} (const std\+::string \&input\+Text, const \hyperlink{_cipher_mode_8hpp_ac3adaabf9bad553901589ddf3de6daf5}{Cipher\+Mode} cipher\+Mode) const override
+\end{DoxyCompactItemize}
+\subsection*{Private Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{class_playfair_cipher_a8e1ee213c8affc4e64fd29fd236a42ee}{Playfair\+Coords} = std\+::pair$<$ std\+::string\+::size\+\_\+type, std\+::string\+::size\+\_\+type $>$\hypertarget{class_playfair_cipher_a8e1ee213c8affc4e64fd29fd236a42ee}{}\label{class_playfair_cipher_a8e1ee213c8affc4e64fd29fd236a42ee}
+
+\begin{DoxyCompactList}\small\item\em Type definition for the coordinates in the 5x5 table. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+const std\+::string\+::size\+\_\+type \hyperlink{class_playfair_cipher_ae010f278b11579565f7166904d4c029a}{grid\+Dim\+\_\+} = 5\hypertarget{class_playfair_cipher_ae010f278b11579565f7166904d4c029a}{}\label{class_playfair_cipher_ae010f278b11579565f7166904d4c029a}
+
+\begin{DoxyCompactList}\small\item\em The grid dimension. \end{DoxyCompactList}\item 
+const std\+::string\+::size\+\_\+type \hyperlink{class_playfair_cipher_a1a3293fccc4e72fc1bd8e77142c6ae45}{key\+Length\+\_\+} = \hyperlink{class_playfair_cipher_ae010f278b11579565f7166904d4c029a}{grid\+Dim\+\_\+}$\ast$\hyperlink{class_playfair_cipher_ae010f278b11579565f7166904d4c029a}{grid\+Dim\+\_\+}\hypertarget{class_playfair_cipher_a1a3293fccc4e72fc1bd8e77142c6ae45}{}\label{class_playfair_cipher_a1a3293fccc4e72fc1bd8e77142c6ae45}
+
+\begin{DoxyCompactList}\small\item\em The key length = grid dim$^\wedge$2. \end{DoxyCompactList}\item 
+std\+::string \hyperlink{class_playfair_cipher_a4f7f68741424613b7200d3f34f963385}{key\+\_\+} = \char`\"{}\char`\"{}\hypertarget{class_playfair_cipher_a4f7f68741424613b7200d3f34f963385}{}\label{class_playfair_cipher_a4f7f68741424613b7200d3f34f963385}
+
+\begin{DoxyCompactList}\small\item\em The cipher key. \end{DoxyCompactList}\item 
+std\+::map$<$ char, \hyperlink{class_playfair_cipher_a8e1ee213c8affc4e64fd29fd236a42ee}{Playfair\+Coords} $>$ \hyperlink{class_playfair_cipher_a1e91611ed184fb0354a523efc6909724}{char\+Lookup\+\_\+}\hypertarget{class_playfair_cipher_a1e91611ed184fb0354a523efc6909724}{}\label{class_playfair_cipher_a1e91611ed184fb0354a523efc6909724}
+
+\begin{DoxyCompactList}\small\item\em Lookup table to go from the character to the coordinates. \end{DoxyCompactList}\item 
+std\+::map$<$ \hyperlink{class_playfair_cipher_a8e1ee213c8affc4e64fd29fd236a42ee}{Playfair\+Coords}, char $>$ \hyperlink{class_playfair_cipher_a1d772016641ca0ab178b25f24c996419}{coord\+Lookup\+\_\+}\hypertarget{class_playfair_cipher_a1d772016641ca0ab178b25f24c996419}{}\label{class_playfair_cipher_a1d772016641ca0ab178b25f24c996419}
+
+\begin{DoxyCompactList}\small\item\em Lookup table to go from the coordinates to the character. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Encrypt or decrypt text using the Playfair cipher with the given key. 
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Playfair\+Cipher@{Playfair\+Cipher}!Playfair\+Cipher@{Playfair\+Cipher}}
+\index{Playfair\+Cipher@{Playfair\+Cipher}!Playfair\+Cipher@{Playfair\+Cipher}}
+\subsubsection[{\texorpdfstring{Playfair\+Cipher(const std\+::string \&key)}{PlayfairCipher(const std::string &key)}}]{\setlength{\rightskip}{0pt plus 5cm}Playfair\+Cipher\+::\+Playfair\+Cipher (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{key}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [explicit]}}\hypertarget{class_playfair_cipher_abb71ab96f33cdcb0651c23f03952aef4}{}\label{class_playfair_cipher_abb71ab96f33cdcb0651c23f03952aef4}
+Create a new \hyperlink{class_playfair_cipher}{Playfair\+Cipher} with the given key
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key to use in the cipher \\
+\hline
+\end{DoxyParams}
+
+
+\subsection{Member Function Documentation}
+\index{Playfair\+Cipher@{Playfair\+Cipher}!apply\+Cipher@{apply\+Cipher}}
+\index{apply\+Cipher@{apply\+Cipher}!Playfair\+Cipher@{Playfair\+Cipher}}
+\subsubsection[{\texorpdfstring{apply\+Cipher(const std\+::string \&input\+Text, const Cipher\+Mode cipher\+Mode) const override}{applyCipher(const std::string &inputText, const CipherMode cipherMode) const override}}]{\setlength{\rightskip}{0pt plus 5cm}std\+::string Playfair\+Cipher\+::apply\+Cipher (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{input\+Text, }
+\item[{const {\bf Cipher\+Mode}}]{cipher\+Mode}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}\hypertarget{class_playfair_cipher_ac5e23f02becb84cb26d89dadeed87b05}{}\label{class_playfair_cipher_ac5e23f02becb84cb26d89dadeed87b05}
+Apply the cipher to the provided text
+
+
+\begin{DoxyParams}{Parameters}
+{\em input\+Text} & the text to encrypt or decrypt \\
+\hline
+{\em cipher\+Mode} & whether to encrypt or decrypt the input text \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+the result of applying the cipher to the input text 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{class_cipher_ac6bbaa662c40483f3c0722109caf8572}{Cipher}.
+
+\index{Playfair\+Cipher@{Playfair\+Cipher}!set\+Key@{set\+Key}}
+\index{set\+Key@{set\+Key}!Playfair\+Cipher@{Playfair\+Cipher}}
+\subsubsection[{\texorpdfstring{set\+Key(const std\+::string \&key)}{setKey(const std::string &key)}}]{\setlength{\rightskip}{0pt plus 5cm}void Playfair\+Cipher\+::set\+Key (
+\begin{DoxyParamCaption}
+\item[{const std\+::string \&}]{key}
+\end{DoxyParamCaption}
+)}\hypertarget{class_playfair_cipher_ab4a3d263f9101cb7aa50d4ad39c15737}{}\label{class_playfair_cipher_ab4a3d263f9101cb7aa50d4ad39c15737}
+Set the key to be used for the encryption/decryption
+
+
+\begin{DoxyParams}{Parameters}
+{\em key} & the key to use in the cipher \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{_playfair_cipher_8hpp}{Playfair\+Cipher.\+hpp}\item 
+Playfair\+Cipher.\+cpp\end{DoxyCompactItemize}

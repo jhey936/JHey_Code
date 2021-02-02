@@ -1,0 +1,2 @@
+/usr/bin/ar qc libMPAGSCipher.a  CMakeFiles/MPAGSCipher.dir/CipherFactory.cpp.o CMakeFiles/MPAGSCipher.dir/CaesarCipher.cpp.o CMakeFiles/MPAGSCipher.dir/PlayfairCipher.cpp.o CMakeFiles/MPAGSCipher.dir/ProcessCommandLine.cpp.o CMakeFiles/MPAGSCipher.dir/TransformChar.cpp.o CMakeFiles/MPAGSCipher.dir/VigenereCipher.cpp.o
+/usr/bin/ranlib libMPAGSCipher.a

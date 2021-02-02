@@ -1,0 +1,22 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[dev-packages]
+
+[packages]
+scipy = "==1.1.0"
+pip = "*"
+certifi = "==2018.4.16"
+numpy = "==1.14.3"
+SQLAlchemy = "==1.2.7"
+Cython = "==0.28.3"
+networkx = "*"
+pandas = "*"
+"pyro4" = "*"
+ipykernel = "*"
+matplotlib = "*"
+
+[requires]
+python_version = "3.6"

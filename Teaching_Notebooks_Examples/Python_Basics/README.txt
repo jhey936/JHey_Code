@@ -1,0 +1,1 @@
+These jupyter-notebooks are the first two in a short series of training notebooks I created to introduce new MSci students in the group who had never seen any code before to the absolute basics of python.

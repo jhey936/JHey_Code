@@ -1,0 +1,1 @@
+/usr/bin/c++   -Wall -Wextra -Werror -Wfatal-errors -Wshadow -pedantic   CMakeFiles/testProcessCommandLine.dir/testProcessCommandLine.cpp.o  -o testProcessCommandLine -rdynamic ../MPAGSCipher/libMPAGSCipher.a 
